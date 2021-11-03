@@ -24,6 +24,7 @@ export const getPowerLinkOnSelectItem = ({
   createPowerLinkNode?: CreatePowerLinkNode;
   insertSpaceAfterPowerLink?: boolean;
 } & PlatePluginKey = {}): ComboboxOnSelectItem => (editor, item) => {
+  debugger;
   const targetRange = comboboxStore.get.targetRange();
   if (!targetRange) return;
 

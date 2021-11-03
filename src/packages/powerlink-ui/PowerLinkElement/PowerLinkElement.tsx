@@ -1,4 +1,6 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
+// eslint-disable-next-line
+import {jsx } from '@emotion/react';
 import { getHandler } from '@udecode/plate-common';
 import { useFocused, useSelected } from 'slate-react';
 import { getPowerLinkElementStyles } from './PowerLinkElement.styles';

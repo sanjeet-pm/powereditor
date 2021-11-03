@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+// eslint-disable-next-line
+import {jsx } from '@emotion/react';
 import * as React from 'react';
 import { getHandler } from '@udecode/plate-common';
 import { useFocused, useSelected } from 'slate-react';
@@ -28,7 +31,6 @@ export const PowerLinkInputElement = (props: PowerLinkInputElementProps) => {
     selected,
     focused,
   });
-
   return (
     <span
       {...attributes}

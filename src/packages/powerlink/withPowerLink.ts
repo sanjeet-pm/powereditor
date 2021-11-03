@@ -53,7 +53,7 @@ export const withPowerLink = ({
 
     insertNodes(editor, {
       type: getPowerLinkInputType(editor),
-      children: [{ text: '' }],
+      children: [{ text: 'Incomplete' }],
       trigger,
     });
   };

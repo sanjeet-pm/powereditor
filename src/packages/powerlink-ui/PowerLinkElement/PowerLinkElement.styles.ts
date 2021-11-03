@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+// eslint-disable-next-line
+import {jsx } from '@emotion/react';
 import { createStyles } from '@udecode/plate-styled-components';
 import { css } from 'styled-components';
 import tw from 'twin.macro';

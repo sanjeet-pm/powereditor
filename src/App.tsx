@@ -1,4 +1,5 @@
 import './App.css';
+import 'twin.macro';
 import { createHistoryPlugin, createReactPlugin, Plate, PlatePlugin } from '@udecode/plate-core';
 import { createAlignPlugin, createAutoformatPlugin, createBlockquotePlugin, createBoldPlugin, createCodeBlockPlugin, createCodePlugin, createComboboxPlugin, createDeserializeAstPlugin, createDeserializeCSVPlugin, createDeserializeHTMLPlugin, createDeserializeMDPlugin, createDndPlugin, createExitBreakPlugin, createFontBackgroundColorPlugin, createFontColorPlugin, createHeadingPlugin, createHighlightPlugin, createImagePlugin, createItalicPlugin, createKbdPlugin, createLinkPlugin, createListPlugin, createMediaEmbedPlugin, createNodeIdPlugin, createParagraphPlugin, createPlateComponents, createPlateOptions, createResetNodePlugin, createSelectOnBackspacePlugin, createSoftBreakPlugin, createStrikethroughPlugin, createSubscriptPlugin, createSuperscriptPlugin, createTablePlugin, createTodoListPlugin, createTrailingBlockPlugin, createUnderlinePlugin, ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED, ELEMENT_PARAGRAPH, withProps } from '@udecode/plate';
 import { useMemo } from 'react';
@@ -18,7 +19,8 @@ function App() {
     [ELEMENT_POWERLINK]: withProps(PowerLinkElement, {}),
   });
   const options = createPlateOptions({
-
+    [ELEMENT_POWERLINK_INPUT]: withProps(PowerLinkInputElement, {}),
+    [ELEMENT_POWERLINK]: withProps(PowerLinkElement, {}),
   });
 
   const pluginsMemo: PlatePlugin<TEditor>[] = useMemo(() => {

@@ -1,5 +1,8 @@
+/** @jsxImportSource @emotion/react */
+// eslint-disable-next-line
+import {jsx } from '@emotion/react';
 import { createStyles } from '@udecode/plate-styled-components';
-import tw, { css } from 'twin.macro';
+import tw, { css } from 'twin.macro'
 import { PowerLinkInputElementStyleProps } from './PowerLinkInputElement.types';
 
 export const getPowerLinkInputElementStyles = (
