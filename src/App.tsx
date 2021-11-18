@@ -7,7 +7,6 @@ import {
   createBoldPlugin,
   createCodeBlockPlugin,
   createCodePlugin,
-  createComboboxPlugin,
   createDeserializeAstPlugin,
   createDeserializeCSVPlugin,
   createDeserializeHTMLPlugin,
@@ -23,7 +22,6 @@ import {
   createLinkPlugin,
   createListPlugin,
   createMediaEmbedPlugin,
-  createMentionPlugin,
   createNodeIdPlugin,
   createParagraphPlugin,
   createPlateComponents,
@@ -37,13 +35,17 @@ import {
   createUnderlinePlugin,
   ELEMENT_IMAGE,
   ELEMENT_MEDIA_EMBED,
-  MentionCombobox,
+  withProps,
 } from '@udecode/plate';
 import { useMemo } from 'react';
+import { PowerLinkElement, PowerLinkInputElement } from './packages/powerlink-ui';
+import { createPowerLinkPlugin, ELEMENT_POWERLINK, ELEMENT_POWERLINK_INPUT } from './packages/powerlink';
+import { PowerLinkPanel } from './components/link';
 
 function App() {
   const components = createPlateComponents({
-
+    [ELEMENT_POWERLINK]: withProps(PowerLinkElement, {}),
+    [ELEMENT_POWERLINK_INPUT]: withProps(PowerLinkInputElement, {})
   });
   const options = createPlateOptions({
 
@@ -80,8 +82,7 @@ function App() {
       createSelectOnBackspacePlugin({
         allow: [ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED],
       }),
-      createComboboxPlugin(),
-      createMentionPlugin()
+      createPowerLinkPlugin()
     ]
 
     plugins.push(
@@ -106,7 +107,8 @@ function App() {
         components={components}
         options={options}
       >
-        <MentionCombobox items={[{ key: '1', text: 'Sanjeet Singh' }]}></MentionCombobox>
+        <PowerLinkPanel></PowerLinkPanel>
+        {/* <PowerLinkCombobox items={[{ key: '1', text: 'Sanjeet Singh' }]}></PowerLinkCombobox> */}
       </Plate>
     </div>
   );
